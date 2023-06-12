@@ -2,7 +2,15 @@
 Дополнительная информация и тестирование функций
 '''
 
+# Данные
+# Старые
+# https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html
+# https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy/downloads.html
+# Новый с 2023 года
+# https://www.energyinst.org/exploring-energy/statistical-review
+
 # Работа с Git в PyCharm  https://www.youtube.com/watch?v=9VKKZNqzPcE
+# Слить ветку master и main https://ru.stackoverflow.com/questions/1197561/
 
 
 # Графические интерфейсы
