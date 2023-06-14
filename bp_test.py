@@ -11,6 +11,8 @@
 
 # Работа с Git в PyCharm  https://www.youtube.com/watch?v=9VKKZNqzPcE
 # Слить ветку master и main https://ru.stackoverflow.com/questions/1197561/
+# я удалил ветку 'master' из репозитория на github, затем переименовал main в master,
+# после этого повторно запушил проект на github. При запросе подтвердил rebase.
 
 
 # Графические интерфейсы
