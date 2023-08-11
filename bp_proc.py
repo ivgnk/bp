@@ -12,9 +12,21 @@ def get_region_name(country:str)->str:
     '''
     pass
 
-def subplot_main_visualisation(num_flt:int):
+def subplot_main_visualisation(num_flt:int, curr_flt:int, dat:np.ndarray, res:np.ndarray, llst:list):
     '''
-    Общая функция для subplots визуализаций на основе pnumpyscipy. test_filters
+    Общая функция для subplots визуализаций на основе pnumpyscipy.test_filters
+    для кривых одинаковой длины
+    В отличие от test_filters нет исходного варианта
+    (num_flt, curr_flt, res, llst) = work_with_smoothing(x, y)  (int, int, np.ndarray, list):
+
+    Матрица res
+    # первый столбец (0) - номер кривой
+    # второй столбец (1) - название кривой
+    # третий столбец (2) - номер подварианта кривой
+    # четвертый столбец (3) - кривая, данные
+    # пятый столбец (4) - параметры подварианта кривой
+    # шесто столбец (5) - х значения для кривой
+
     '''
     sp = get_suplotsize(num_flt)
     plt.subplots( nrows = sp[0], ncols = sp[1], figsize=(15, 8))

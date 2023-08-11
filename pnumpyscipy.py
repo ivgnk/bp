@@ -13,8 +13,10 @@ import matplotlib.pyplot as plt
 from astropy.modeling.models import *  # для задания гауссова распределения весов окна
 
 def calc_triang_weights_for_1Dfilter(win_size:int)->np.ndarray:
-    # Расчет значений треугольной функции для фильтра
-    # не проверяем win_size, оно должно быть нечетным
+    '''
+    Расчет значений треугольной функции для фильтра
+    не проверяем win_size, оно должно быть нечетным
+    '''
     x = np.array([0.0 for i in range(win_size)])
     half_win = win_size // 2
     frst_odd = 1
@@ -32,8 +34,18 @@ def norm_weights_for_1Dfilter(dat: np.ndarray)->np.ndarray:
     '''
     return dat/np.sum(dat)
 
+
+def test_smoothing():
+    '''
+    Просто проверка работоспособности
+    '''
+    x = np.array([i for i in range(10)])
+    y = np.array([random() for i in range(10)])
+    res = work_with_smoothing(x, y)
+
 def work_with_smoothing(x: np.ndarray, y: np.ndarray)->(int, int, np.ndarray, list):
     '''
+    Сглаживание различными фильтрами
     Return:
     num_flt - всего вариантов
     curr_flt - всего подвариантов
@@ -74,6 +86,7 @@ def work_with_smoothing(x: np.ndarray, y: np.ndarray)->(int, int, np.ndarray, li
 # list - число подвариантов для каждого варианта
 def prep_savgol(num_flt:int, curr_flt:int, dat:np.ndarray, res:np.ndarray, llst:list)->(int, int, np.ndarray, list):
     '''
+    Сшдаживание фильтром
     https://stackoverflow.com/questions/20618804/how-to-smooth-a-curve-for-a-dataset
     '''
     num_flt += 1

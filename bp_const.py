@@ -160,6 +160,7 @@ def calc_oil_price_stat():
 
     # calc_sum_by_table(tbl:Table, tbl_clm_nm:str):
 
+
 def test_data():
     print('len(oil_price_years)    = ', len(oil_price_years))
     print('len(oil_price_usd_curr) = ', len(oil_price_usd_curr))

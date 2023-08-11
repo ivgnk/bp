@@ -1,7 +1,10 @@
 '''
 Дополнительная информация и тестирование функций
+Работа с Git в PyCharm. Без терминалов и головной боли.
+https://www.youtube.com/watch?v=9VKKZNqzPcE
 '''
 
+from dataclasses import dataclass
 from bp_const import *
 from pnumpyscipy import *
 from  random import *
@@ -65,7 +68,77 @@ import math
 # print(type(main_oil_countries2))
 # print(main_oil_countries2.size)
 
-x = np.array([i for i in range(10)])
-y = np.array([random() for i in range(10)])
+def test_dict():
+    '''
+    Разные операции со словарями
+    '''
+    x = [i for i in range(10)]; x1= [i for i in range(2,12)]; y = [i*2 for i in range(10)]; y1= [i*3 for i in range(2,12)]
+    the_dict = {'x':x, 'x1':x1, 'y':y, 'y1':y1}
 
-res = work_with_smoothing(x, y)
+    k = ['x', 'x1', 'y', 'y1']; v = [x, x1, y, y1]
+    the_dict2 = dict(zip(k,v))
+
+    print(the_dict);   print(the_dict2)
+    print('len(the_dict) = ', len(the_dict))
+
+    # 4 способа перебора словаря в Python
+    # https://python-lab.ru/4-sposoba-perebora-slovarya-v-python
+    # https://www.geeksforgeeks.org/python-get-key-from-value-in-dictionary/
+    print('\n var 1')
+    i = 0
+    for itms in the_dict.items():
+        print(i,'  ',itms, '  ', )
+        i += 1
+
+    print('\n var 2')
+    i = 0
+    for key, value in the_dict.items():
+        print(i,'  key = ',key, '    value = ', value, ' ')
+        i += 1
+
+    print('\n var 3')
+    i = 0
+    for key in the_dict.keys():
+        print(i,'  key = ',key,'   the_dict[key] =',the_dict[key])
+        i += 1
+
+    print('\n var 4')
+    i = 0
+    for value in the_dict.values():
+        print(i,'  value = ',value)
+        i += 1
+
+
+# ----------- dataclass в различных структурах данных
+@dataclass
+class Line_:
+    x:np.ndarray
+    y:np.ndarray
+    name:str
+    param:str
+    num:int # номер кривой
+    currnum:int # номер подварианта кривой
+
+def test_dict_with_dataclass():
+    '''
+    Разные операции со словарями, содержащими dataclass
+    '''
+    print('\n base')
+    curr_dict = dict()
+    n = 5
+    for i in range(n):
+        # curr_dict[i] = i*10
+        x1 = np.array([i for i in range(10)])
+        y1 = np.array([i*2 for i in range(10)])
+        s = str(i)
+        curr_dict[i] = Line_(x=x1, y=y1, name='nm'+s, param='prm'+s, num=i, currnum = i)
+
+    print(curr_dict)
+
+    print('\n cycle for')
+    for i in range(n):
+        print('i = ',i,'   key = ',i,'  value = ', curr_dict[i])
+
+
+if __name__ == "__main__":
+    test_dict_with_dataclass()
