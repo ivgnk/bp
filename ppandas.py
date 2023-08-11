@@ -6,6 +6,9 @@ from bp_const import *
 from copy import deepcopy
 
 def extract_in_years(newdat: pd.DataFrame, limits: np.ndarray )->pd.DataFrame:
+    '''
+    Извлечение из pd.DataFrame строк в диапазоне заданных лет
+    '''
     for i in range(limits.size):
         mmin = limits[i].begYear
         mmax = limits[i].endYear

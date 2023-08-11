@@ -1,3 +1,6 @@
+'''
+Программа для анализа данных bp Statistical Review of World Energy June 2022
+'''
 from bp_object import *
 
 thebp_dat = BpDat()

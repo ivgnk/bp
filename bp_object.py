@@ -1,3 +1,8 @@
+'''
+Основной объект программы bp_main_analysis:
+данные и их обработка
+'''
+
 import os
 import os
 import numpy as np

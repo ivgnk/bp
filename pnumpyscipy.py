@@ -1,5 +1,5 @@
 '''
-Использование разных функций из numpy и scipy
+Использование разных функций из numpy и scipy.
 Преимущественно фильтры
 '''
 import inspect
@@ -14,7 +14,7 @@ from astropy.modeling.models import *  # для задания гауссова 
 
 def calc_triang_weights_for_1Dfilter(win_size:int)->np.ndarray:
     # Расчет значений треугольной функции для фильтра
-    # не проверяем win_size, оно должно быть нечтным
+    # не проверяем win_size, оно должно быть нечетным
     x = np.array([0.0 for i in range(win_size)])
     half_win = win_size // 2
     frst_odd = 1

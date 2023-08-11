@@ -184,6 +184,7 @@ def read_oil_price(fname:str):
     return tbl
 
 def my_triang_kernel(param):
+
     llen = SMA_w[param]
     x = calc_triang_weights_for_1Dfilter(llen)
     weights = norm_weights_for_1Dfilter(x)
@@ -206,6 +207,9 @@ def test_kernel():
 
 
 def smooth_oil_price_w_kernel5(tbl, thekernel:the_kernel):
+    '''
+    Снлаживание данныз с помощью 5 окон разного размера
+    '''
     print(thekernel.kernel_nms)
     x = tbl["Year"]
     pr_curr = tbl[oil_pr_sht_clm_nm[1]]
@@ -328,6 +332,7 @@ def smooth_oil_price_curr1DKernel(tbl, param:list):
 
 def create_Gaussian1D_kernel(x_sz:int, ampl_:float=1, mn_:float=0, std_:float=2,is_view:bool=False)->np.ndarray:
     '''
+    Задание гауссовых весов для сглаживания
     x_sz - длина результирующего numpy.ndarray
     ampl - амплитуда, mn - среднее 0, std - стандартное отклонение
     На основе Model1DKernel
@@ -346,10 +351,14 @@ def create_Gaussian1D_kernel(x_sz:int, ampl_:float=1, mn_:float=0, std_:float=2,
     return gauss_kernel.array
 
 def test_create_Gaussian1D_kernel():
+    '''
+    Проверка функции create_Gaussian1D_kernel
+    '''
     pass
 
 def test_astropy_units():
     '''
+    Работа с именованными (размерными) величинами из astropy.units
     https://docs.astropy.org/en/stable/units/index.html#module-astropy.units
     https://docs.astropy.org/en/stable/units/index.html#getting-started
     https://docs.astropy.org/en/stable/units/index.html#using-astropy-units

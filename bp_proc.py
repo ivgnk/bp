@@ -7,9 +7,15 @@ from pnumpyscipy import *
 import matplotlib.pyplot as plt
 
 def get_region_name(country:str)->str:
+    '''
+    По стране определяем регион
+    '''
     pass
 
 def subplot_main_visualisation(num_flt:int):
+    '''
+    Общая функция для subplots визуализаций на основе pnumpyscipy. test_filters
+    '''
     sp = get_suplotsize(num_flt)
     plt.subplots( nrows = sp[0], ncols = sp[1], figsize=(15, 8))
     currflt = 0
@@ -25,3 +31,6 @@ def subplot_main_visualisation(num_flt:int):
             # https://jenyay.net/Matplotlib/LegendPosition
             plt.legend(loc = 'lower center', prop={'size': 8}) #  'lower right'  'best'
     plt.show()
+
+if __name__ == "__main__":
+    subplot_main_visualisation()
