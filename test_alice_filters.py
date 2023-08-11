@@ -1,3 +1,8 @@
+'''
+Тестирование фильтров рекомендованных Яндекс Алисой :)
+Ничего не работает как надо :)
+'''
+
 from random import *
 import matplotlib.pyplot as plt
 import numpy as np

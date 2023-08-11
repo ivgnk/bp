@@ -1,8 +1,13 @@
+'''
+Работа с функциями obspy
+'''
+
 from obspy import read
 import numpy as np
 from bp_const import *
 from pnumpyscipy import *
 from obspy import read
+
 
 # st = read()  # load example seismogram
 # print(len(st))

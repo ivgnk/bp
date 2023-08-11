@@ -1,5 +1,5 @@
 '''
-Использование разных функци1 из numpy и scipy
+Использование разных функций из numpy и scipy
 Преимущественно фильтры
 '''
 import inspect
@@ -27,10 +27,19 @@ def calc_triang_weights_for_1Dfilter(win_size:int)->np.ndarray:
     return x
 
 def norm_weights_for_1Dfilter(dat: np.ndarray)->np.ndarray:
-    # Нормализация весов для фильтра
+    '''
+    Нормализация весов для 1D фильтра
+    '''
     return dat/np.sum(dat)
 
 def work_with_smoothing(x: np.ndarray, y: np.ndarray)->(int, int, np.ndarray, list):
+    '''
+    Return:
+    num_flt - всего вариантов
+    curr_flt - всего подвариантов
+    res - массив для визуализации с указанием варианта, подварианта, строкового названия, строковых параметров
+    llst - список подвариатов для каждого варианта
+    '''
     # x фактически не нужен, т.к. считаем данные на равномерной 1-Д сетке
     # num_flt - число разных фильтров
     # curr_flt - общее число с подвариантами
@@ -138,24 +147,30 @@ def get_poly_order_for_savgol(window_length: int)->int:
            res = 2
        return res
 
-def get_suplotsize(nfilt:int)->tuple:
+def get_suplotsize(npictures:int)->tuple:
+    '''
+    Задает разбиение окна на части в зависимости от числа картинок
+    '''
     clmn = 4
-    if nfilt < 1:
+    if npictures < 1:
         raise ValueError('Число фильтров должно быть больше 0')
-    if nfilt == 1:
+    if npictures == 1:
        res = (1,1)
-    elif nfilt == 2:
+    elif npictures == 2:
        res = (1,2)
-    elif (nfilt == 3) or (nfilt == 4):
+    elif (npictures == 3) or (npictures == 4):
        res = (2, 2)
-    elif (nfilt % clmn) == 0:
-        res = ((nfilt // clmn), clmn)
+    elif (npictures % clmn) == 0:
+        res = ((npictures // clmn), clmn)
     else:
-        res = ((nfilt // clmn)+1, clmn)
+        res = ((npictures // clmn) + 1, clmn)
 
     return res
 
 def test_suplotsize():
+    '''
+    Проверка функции get_suplotsize
+    '''
     for i in range(1,20):
         print(i,' ',get_suplotsize(i))
 

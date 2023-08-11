@@ -1,3 +1,8 @@
+'''
+Работа с функциями numpy
+'''
+
+
 import numpy as np
 from functools import reduce
 
