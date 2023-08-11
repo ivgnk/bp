@@ -1,8 +1,7 @@
-def the_input():
+from bp_const import *
+def get_region_name(country:str)->str:
     pass
 
-def the_work():
-    pass
+def subplot_visualisation():
 
-def the_visualisation():
     pass
