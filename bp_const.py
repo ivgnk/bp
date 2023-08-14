@@ -108,6 +108,16 @@ class the_kernel:
     kernel_prm:list
     kernel_nms:str
 
+
+@dataclass
+class Line_:
+    x:np.ndarray
+    y:np.ndarray
+    name:str  # название линии (фильтра)
+    param:str # пароаметры линии (фильтра)
+    num:int   # номер линии (фильтра)
+    currnum:int # номер подварианта линии (фильтра)
+
 def create_main_oil_countries2()->np.ndarray:
      def_SMA_window_size:list = [3, 7, 13, 25]
      main_oil_countries2 = np.arange(3, dtype=CountryYears)
