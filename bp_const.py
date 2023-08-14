@@ -8,7 +8,7 @@ import numpy as np
 import math
 
 from astropy.table import *
-
+g = 1
 
 dat_dir = 'dat'
 res_dir = 'res'
