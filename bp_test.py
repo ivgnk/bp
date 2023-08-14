@@ -135,7 +135,14 @@ def test_dict_with_dataclass():
 def test_nested_lists():
     '''
     Тестирование вложенных списков
-    :return:
+
+class Line_:
+    x:np.ndarray
+    y:np.ndarray
+    name:str  # название линии (фильтра)
+    param:str # параметры линии (фильтра)
+    num:int   # номер линии (фильтра)
+    currnum:int # номер подварианта линии (фильтра)
     '''
     llst = []
     n = 5

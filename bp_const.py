@@ -8,7 +8,6 @@ import numpy as np
 import math
 
 from astropy.table import *
-g = 1
 
 dat_dir = 'dat'
 res_dir = 'res'
@@ -114,7 +113,7 @@ class Line_:
     x:np.ndarray
     y:np.ndarray
     name:str  # название линии (фильтра)
-    param:str # пароаметры линии (фильтра)
+    param:str # параметры линии (фильтра) / Указываются параметры варианта+подваринта
     num:int   # номер линии (фильтра)
     currnum:int # номер подварианта линии (фильтра)
 
