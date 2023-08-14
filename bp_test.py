@@ -110,14 +110,6 @@ def test_dict():
 
 
 # ----------- dataclass в различных структурах данных
-@dataclass
-class Line_:
-    x:np.ndarray
-    y:np.ndarray
-    name:str
-    param:str
-    num:int # номер кривой
-    currnum:int # номер подварианта кривой
 
 def test_dict_with_dataclass():
     '''
@@ -140,5 +132,20 @@ def test_dict_with_dataclass():
         print('i = ',i,'   key = ',i,'  value = ', curr_dict[i])
 
 
+def test_nested_lists():
+    '''
+    Тестирование вложенных списков
+    :return:
+    '''
+    llst = []
+    n = 5
+    for i in range(n):
+        llst.append([])
+        for j in range(3):
+            llst[i].append([j])
+            pass
+    print(llst)
+
 if __name__ == "__main__":
-    test_dict_with_dataclass()
+    test_nested_lists()
+    # test_dict_with_dataclass()
