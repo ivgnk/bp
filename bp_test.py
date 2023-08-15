@@ -135,7 +135,6 @@ def test_dict_with_dataclass():
 def test_nested_lists():
     '''
     Тестирование вложенных списков
-
 class Line_:
     x:np.ndarray
     y:np.ndarray
@@ -149,7 +148,9 @@ class Line_:
     for i in range(n):
         llst.append([])
         for j in range(3):
-            llst[i].append([j])
+            # print(i, 'before ',j,' ',len(llst[i]))
+            llst[i].append(j)
+            # print(i, 'after ',j,' ',len(llst[i]))
             pass
     print(llst)
 

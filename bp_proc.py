@@ -14,6 +14,9 @@ def get_region_name(country:str)->str:
     pass
 
 def create_test_dat_for_subplot_main_visualisation(is_view=False)->list:
+    '''
+    Работа с вложенными списками, внутри которых дата-класс
+    '''
     num_flt = 2
     ini_sub_var = 3
     len_x = 50; step_on_x = 10
