@@ -16,6 +16,7 @@ import pprint as pp
 import sys
 import inspect
 from pathlib import Path
+import pmath_trig as mt
 
 # - Интервалы времени добычи
 # в самом первом значении добыча = 0
@@ -196,6 +197,7 @@ class OilProductionModel:
         plt.plot(self.arg, self.data)
         plt.grid()
         plt.show()
+
 
 
 if __name__ == "__main__":
